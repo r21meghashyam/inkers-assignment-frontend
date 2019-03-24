@@ -1,0 +1,9 @@
+.loginBox{
+    background: #ffffff;
+    padding: 20px 50px;
+    box-shadow: 0px 0px 10px #ccc;
+}
+
+.loginBox h1{
+   text-align: center;
+}
