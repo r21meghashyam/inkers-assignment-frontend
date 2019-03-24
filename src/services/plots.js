@@ -62,10 +62,18 @@ export const login=async(username,password)=>{
     } 
 }
 
-export const logout=()=>{
-    localStorage.removeItem("userCredentials");
-    userAction("LOGGED_OUT");
-    return true;
+export const logout=async ()=>{
+    try{
+        await fetch(`${constants.server}/logout`,{
+            credentials:"include"
+        });
+        localStorage.removeItem("userCredentials");
+        userAction("LOGGED_OUT");
+        
+    }
+    catch(err){
+        toast(err.message)
+    } 
 }
 
 export const getUser=()=>{
